@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="@color/colorEgDialogBackground"/>
+    <corners
+        android:topLeftRadius="@dimen/eg_dialog_container_corner_radius"
+        android:bottomLeftRadius="@dimen/eg_dialog_container_corner_radius"
+        android:bottomRightRadius="@dimen/eg_dialog_container_corner_radius"
+        android:topRightRadius="@dimen/eg_dialog_container_corner_radius"/>
+</shape>

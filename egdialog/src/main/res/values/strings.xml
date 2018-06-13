@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">egdialog</string>
+    <string name="default_action_positive_text">OK</string>
+</resources>
