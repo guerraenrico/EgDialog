@@ -13,6 +13,6 @@ Simple Dialog
 
 ```groovy
 	dependencies {
-	        implementation 'com.github.crocoM4:EgDialog:v0.0.1'
+    implementation 'com.github.crocoM4:EgDialog:v0.0.1'
 	}
 ```
