@@ -1,8 +1,6 @@
 package com.guerra.enrico.egdialog
 
 import android.support.annotation.StringRes
-import android.view.View
-
 /**
  * Created by enrico
  * on 16/06/2018.

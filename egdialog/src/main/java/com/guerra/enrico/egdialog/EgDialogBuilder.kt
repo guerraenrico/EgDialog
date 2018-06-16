@@ -50,18 +50,28 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder {
-        view.egActionNegative.visibility = if (textActionNegative !== "") View.VISIBLE else View.INVISIBLE
+        view.egActionNegative.visibility = if (textActionNegative.isNotEmpty()) View.VISIBLE else View.INVISIBLE
         view.egActionNegative.text = textActionNegative
         return this
     }
 
     override fun setOnActionPositiveClickListener(listener: OnActionClickListener): EgDialogBuilder {
-        view.egActionPositive.setOnClickListener { listener.onClick(view.egActionPositive, context, dialog) }
+        view.egActionPositive.setOnClickListener {
+            if (!this::dialog.isInitialized) {
+                throw InstantiationException("Dialog is not initialized. Need to cal method build")
+            }
+            listener.onClick(it, context, dialog)
+        }
         return this
     }
 
     override fun setOnActionNegativeClickListener(listener: OnActionClickListener): EgDialogBuilder {
-        view.egActionNegative.setOnClickListener { listener.onClick(view.egActionNegative, context, dialog) }
+        view.egActionNegative.setOnClickListener {
+            if (!this::dialog.isInitialized) {
+                throw InstantiationException("Dialog is not initialized. Need to cal method build")
+            }
+            listener.onClick(it, context, dialog)
+        }
         return this
     }
 
