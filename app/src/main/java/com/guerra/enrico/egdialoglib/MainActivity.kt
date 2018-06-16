@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonOpen.setOnClickListener {
             val builder = EgDialogBuilder(context = this)
-                    .setTitle("Title")
+                    .setTitle(R.string.app_name)
                     .setDescription("Lorem ipsum dolor sit ammet")
                     .setNegativeActionText("Cancel")
                     .setPositiveActionText("Confirm")
