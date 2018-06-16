@@ -20,9 +20,9 @@ interface IEgDialogBuilder {
     fun setNegativeActionText(@StringRes textActionNegative: Int): EgDialogBuilder
     fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder
 
-    fun setOnActionPositiveClickListener(listener: View.OnClickListener): EgDialogBuilder
+    fun setOnActionPositiveClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
 
-    fun setOnActionNegativeClickListener(listener: View.OnClickListener): EgDialogBuilder
+    fun setOnActionNegativeClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
 
     fun build() : EgDialog
 }

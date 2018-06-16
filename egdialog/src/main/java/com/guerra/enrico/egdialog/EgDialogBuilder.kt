@@ -55,13 +55,13 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         return this
     }
 
-    override fun setOnActionPositiveClickListener(listener: View.OnClickListener): EgDialogBuilder {
-        view.egActionPositive.setOnClickListener(listener)
+    override fun setOnActionPositiveClickListener(listener: OnActionClickListener): EgDialogBuilder {
+        view.egActionPositive.setOnClickListener { listener.onClick(view.egActionPositive, context, dialog) }
         return this
     }
 
-    override fun setOnActionNegativeClickListener(listener: View.OnClickListener): EgDialogBuilder {
-        view.egActionNegative.setOnClickListener(listener)
+    override fun setOnActionNegativeClickListener(listener: OnActionClickListener): EgDialogBuilder {
+        view.egActionNegative.setOnClickListener { listener.onClick(view.egActionNegative, context, dialog) }
         return this
     }
 
@@ -70,7 +70,9 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         return dialog
     }
 
-
     private fun getResourcesString(@StringRes stringId: Int) : String = context.getString(stringId)
 
+    interface OnActionClickListener{
+        fun onClick(view: View, context: Context, dialog: EgDialog)
+    }
 }
