@@ -1,58 +1,88 @@
 package com.guerra.enrico.egdialog
 
 import android.content.Context
+import android.support.annotation.StringRes
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import kotlinx.android.synthetic.main.eg_dialog_main.view.*
 
 /**
  * Created by enrico
  * on 10/06/2018.
  */
-class EgDialogBuilder(var context: Context, root: ViewGroup?= null) {
+class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     val view: View
-    val themeId = R.style.EgDialogStyle
+    lateinit var dialog: EgDialog
     init {
         val inflater = LayoutInflater.from(context)
-        view = inflater.inflate(R.layout.eg_dialog_main,  root)
+        view = inflater.inflate(R.layout.eg_dialog_main,  null)
     }
 
-    fun setTitle(title: CharSequence?) : EgDialogBuilder {
+    override fun setTitle(title: Int): EgDialogBuilder {
+        return setTitle(getResourcesString(title))
+    }
+
+    override fun setTitle(title: CharSequence) : EgDialogBuilder {
         view.egDialogTitle.text = title
         return this
     }
 
-    fun setDescription(description: CharSequence?): EgDialogBuilder {
+    override fun setDescription(description: Int): EgDialogBuilder {
+        return setDescription(getResourcesString(description))
+    }
+
+    override fun setDescription(description: CharSequence): EgDialogBuilder {
         view.egDialogDescription.text = description
         return this
     }
 
-    fun setPositiveActionText(textActionPositive: CharSequence): EgDialogBuilder {
+    override fun setPositiveActionText(textActionPositive: Int): EgDialogBuilder {
+        return setPositiveActionText(getResourcesString(textActionPositive))
+    }
+
+    override fun setPositiveActionText(textActionPositive: CharSequence): EgDialogBuilder {
         view.egActionPositive.text = textActionPositive
         return this
     }
 
-    fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder {
-        view.egActionNegative.visibility = if (textActionNegative !== "") View.VISIBLE else View.INVISIBLE
+    override fun setNegativeActionText(textActionNegative: Int): EgDialogBuilder {
+        return setNegativeActionText(getResourcesString(textActionNegative))
+    }
+
+    override fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder {
+        view.egActionNegative.visibility = if (textActionNegative.isNotEmpty()) View.VISIBLE else View.INVISIBLE
         view.egActionNegative.text = textActionNegative
         return this
     }
 
-    fun setOnActionPositiveClickListener(listener: View.OnClickListener): EgDialogBuilder {
-        view.egActionPositive.setOnClickListener(listener)
+    override fun setOnActionPositiveClickListener(listener: OnActionClickListener): EgDialogBuilder {
+        view.egActionPositive.setOnClickListener {
+            if (!this::dialog.isInitialized) {
+                throw InstantiationException("Dialog is not initialized. Need to cal method build")
+            }
+            listener.onClick(it, context, dialog)
+        }
         return this
     }
 
-    fun setOnActionNegativeClickListener(listener: View.OnClickListener): EgDialogBuilder {
-        view.egActionNegative.setOnClickListener(listener)
+    override fun setOnActionNegativeClickListener(listener: OnActionClickListener): EgDialogBuilder {
+        view.egActionNegative.setOnClickListener {
+            if (!this::dialog.isInitialized) {
+                throw InstantiationException("Dialog is not initialized. Need to cal method build")
+            }
+            listener.onClick(it, context, dialog)
+        }
         return this
     }
 
-    fun build() : EgDialog {
-        return EgDialog(this)
+    override fun build() : EgDialog {
+        dialog = EgDialog(this)
+        return dialog
     }
 
+    private fun getResourcesString(@StringRes stringId: Int) : String = context.getString(stringId)
 
-
+    interface OnActionClickListener{
+        fun onClick(view: View, context: Context, dialog: EgDialog)
+    }
 }
