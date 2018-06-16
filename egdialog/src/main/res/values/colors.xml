@@ -2,14 +2,14 @@
 <resources>
     <color name="colorWindowEgDialogBackground">#00FFFFFF</color>
 
-    <color name="colorEgDialogTitle">#1a1919</color>
-    <color name="colorEgDialogDescription">#275365</color>
+    <color public="true" name="colorEgDialogTitle">#1a1919</color>
+    <color public="true" name="colorEgDialogDescription">#275365</color>
 
-    <color name="colorTextEgDialogActionPositive">#FFFFFF</color>
-    <color name="colorBackgroundEgDialogActionPositive">#2196F3</color>
+    <color public="true" name="colorTextEgDialogActionPositive">#FFFFFF</color>
+    <color public="true" name="colorBackgroundEgDialogActionPositive">#2196F3</color>
 
-    <color name="colorTextEgDialogActionNegative">#2196F3</color>
-    <color name="colorBackgroundEgDialogActionNegative">@android:color/transparent</color>
+    <color public="true" name="colorTextEgDialogActionNegative">#2196F3</color>
+    <color public="true" name="colorBackgroundEgDialogActionNegative">@android:color/transparent</color>
 
     <color name="colorEgDialogBackground">#ffffff</color>
 </resources>
