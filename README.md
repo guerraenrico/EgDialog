@@ -1,6 +1,6 @@
 # EgDialog
 
-![](https://jitpack.io/v/crocoM4/EgDialog.svg)
+[![](https://jitpack.io/v/crocoM4/EgDialog.svg)](https://jitpack.io/#crocoM4/EgDialog)
 
 Simple Dialog
 
