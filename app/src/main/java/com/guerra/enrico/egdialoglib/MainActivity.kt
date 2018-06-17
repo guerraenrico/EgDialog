@@ -21,13 +21,12 @@ class MainActivity : AppCompatActivity() {
                     .setDescription("Lorem ipsum dolor sit ammet")
                     .setNegativeActionText("Cancel")
                     .setPositiveActionText("Confirm")
-                    .setOnActionNegativeClickListener(object : EgDialogBuilder.OnActionClickListener {
+                    .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {
                         override fun onClick(view: View, context: Context, dialog: EgDialog) {
                             dialog.dismiss()
                         }
-
                     })
-                    .setOnActionPositiveClickListener(object : EgDialogBuilder.OnActionClickListener {
+                    .setOnPositiveActionClickListener(object : EgDialogBuilder.OnActionClickListener {
                         override fun onClick(view: View, context: Context, dialog: EgDialog) {
                             Toast.makeText(context, "Confirm", Toast.LENGTH_SHORT).show()
                         }

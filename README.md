@@ -5,16 +5,16 @@
 Simple Dialog
 
 ```groovy
-  allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
 ```
 
 ```groovy
-	dependencies {
-    implementation 'com.github.crocoM4:EgDialog:v0.0.2'
-	}
+dependencies {
+  implementation 'com.github.crocoM4:EgDialog:v0.0.3'
+}
 ```
