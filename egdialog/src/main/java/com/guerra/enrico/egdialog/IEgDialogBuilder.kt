@@ -1,5 +1,7 @@
 package com.guerra.enrico.egdialog
 
+import android.graphics.drawable.Drawable
+import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 /**
  * Created by enrico
@@ -12,15 +14,21 @@ interface IEgDialogBuilder {
     fun setDescription(@StringRes description: Int): EgDialogBuilder
     fun setDescription(description: CharSequence): EgDialogBuilder
 
-    fun setPositiveActionText(@StringRes textActionPositive: Int): EgDialogBuilder
-    fun setPositiveActionText(textActionPositive: CharSequence): EgDialogBuilder
+    fun setPositiveActionText(@StringRes text: Int): EgDialogBuilder
+    fun setPositiveActionText(text: CharSequence): EgDialogBuilder
 
-    fun setNegativeActionText(@StringRes textActionNegative: Int): EgDialogBuilder
-    fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder
+    fun setPositiveActionBackgroundDrawable(@DrawableRes drawable: Int): EgDialogBuilder
+    fun setPositiveActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder
 
-    fun setOnActionPositiveClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
+    fun setNegativeActionText(@StringRes text: Int): EgDialogBuilder
+    fun setNegativeActionText(text: CharSequence): EgDialogBuilder
 
-    fun setOnActionNegativeClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
+    fun setNegativeActionBackgroundDrawable(@DrawableRes drawable: Int): EgDialogBuilder
+    fun setNegativeActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder
+
+    fun setOnPositiveActionClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
+
+    fun setOnNegativeActionClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
 
     fun setCancelable(flag: Boolean) : EgDialogBuilder
 

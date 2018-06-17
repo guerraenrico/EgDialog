@@ -1,6 +1,7 @@
 package com.guerra.enrico.egdialog
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.support.annotation.StringRes
 import android.view.LayoutInflater
 import android.view.View
@@ -38,26 +39,44 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         return this
     }
 
-    override fun setPositiveActionText(textActionPositive: Int): EgDialogBuilder {
-        return setPositiveActionText(getResourcesString(textActionPositive))
+    override fun setPositiveActionText(text: Int): EgDialogBuilder {
+        return setPositiveActionText(getResourcesString(text))
     }
 
-    override fun setPositiveActionText(textActionPositive: CharSequence): EgDialogBuilder {
-        view.egActionPositive.text = textActionPositive
+    override fun setPositiveActionText(text: CharSequence): EgDialogBuilder {
+        view.egActionPositive.text = text
         return this
     }
 
-    override fun setNegativeActionText(textActionNegative: Int): EgDialogBuilder {
-        return setNegativeActionText(getResourcesString(textActionNegative))
+    override fun setPositiveActionBackgroundDrawable(drawable: Int): EgDialogBuilder {
+        return setPositiveActionBackgroundDrawable(context.resources.getDrawable(drawable, context.theme))
     }
 
-    override fun setNegativeActionText(textActionNegative: CharSequence): EgDialogBuilder {
-        view.egActionNegative.visibility = if (textActionNegative.isNotEmpty()) View.VISIBLE else View.INVISIBLE
-        view.egActionNegative.text = textActionNegative
+    override fun setPositiveActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder {
+        view.egActionPositive.background = drawable
         return this
     }
 
-    override fun setOnActionPositiveClickListener(listener: OnActionClickListener): EgDialogBuilder {
+    override fun setNegativeActionText(text: Int): EgDialogBuilder {
+        return setNegativeActionText(getResourcesString(text))
+    }
+
+    override fun setNegativeActionText(text: CharSequence): EgDialogBuilder {
+        view.egActionNegative.visibility = if (text.isNotEmpty()) View.VISIBLE else View.INVISIBLE
+        view.egActionNegative.text = text
+        return this
+    }
+
+    override fun setNegativeActionBackgroundDrawable(drawable: Int): EgDialogBuilder {
+        return setNegativeActionBackgroundDrawable(context.resources.getDrawable(drawable, context.theme))
+    }
+
+    override fun setNegativeActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder {
+        view.egActionNegative.background = drawable
+        return this
+    }
+
+    override fun setOnPositiveActionClickListener(listener: OnActionClickListener): EgDialogBuilder {
         view.egActionPositive.setOnClickListener {
             if (!this::dialog.isInitialized) {
                 throw InstantiationException("Dialog is not initialized. Need to cal method build")
@@ -67,7 +86,7 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         return this
     }
 
-    override fun setOnActionNegativeClickListener(listener: OnActionClickListener): EgDialogBuilder {
+    override fun setOnNegativeActionClickListener(listener: OnActionClickListener): EgDialogBuilder {
         view.egActionNegative.setOnClickListener {
             if (!this::dialog.isInitialized) {
                 throw InstantiationException("Dialog is not initialized. Need to cal method build")
