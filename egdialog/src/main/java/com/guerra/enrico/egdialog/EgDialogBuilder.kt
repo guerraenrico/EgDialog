@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.eg_dialog_main.view.*
  */
 class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     val view: View
-    lateinit var dialog: EgDialog
+    private lateinit var dialog: EgDialog
+    private var cancelable = true
+
     init {
         val inflater = LayoutInflater.from(context)
         view = inflater.inflate(R.layout.eg_dialog_main,  null)
@@ -75,8 +77,14 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         return this
     }
 
+    override fun setCancelable(flag: Boolean): EgDialogBuilder {
+        cancelable = flag
+        return this
+    }
+
     override fun build() : EgDialog {
         dialog = EgDialog(this)
+        dialog.setCancelable(cancelable)
         return dialog
     }
 

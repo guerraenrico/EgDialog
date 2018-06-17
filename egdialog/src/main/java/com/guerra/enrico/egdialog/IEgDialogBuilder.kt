@@ -22,5 +22,7 @@ interface IEgDialogBuilder {
 
     fun setOnActionNegativeClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
 
+    fun setCancelable(flag: Boolean) : EgDialogBuilder
+
     fun build() : EgDialog
 }
