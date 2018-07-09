@@ -3,9 +3,15 @@ package com.guerra.enrico.egdialog
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.support.annotation.StringRes
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.LinearLayout
+import com.guerra.enrico.egdialog.list.EgListAdapter
+import com.guerra.enrico.egdialog.list.EgObjectWrapper
 import kotlinx.android.synthetic.main.eg_dialog_main.view.*
+import kotlinx.android.synthetic.main.eg_dialog_partial_list.view.*
 
 /**
  * Created by enrico
@@ -94,6 +100,50 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
             listener.onClick(it, context, dialog)
         }
         return this
+    }
+
+    override fun <T> setSingleChoiceList(list: List<T>, getItemDescription: (T) -> String, onItemSelected: (T, Int) -> Unit, positionSelectedItem: Int): EgDialogBuilder {
+        val inflater = LayoutInflater.from(context)
+        view.egContentCustomView.visibility = View.VISIBLE
+        view.egContentCustomView.addView(inflater.inflate(R.layout.eg_dialog_partial_list, null) as LinearLayout?)
+
+        val wrapperList = EgObjectWrapper.getWrapperList(list)
+        if (positionSelectedItem != -1) {
+            wrapperList[positionSelectedItem].selected = true
+        }
+
+        val adapter = EgListAdapter(wrapperList.toMutableList(), getItemDescription) {
+            egObjectWrapper: EgObjectWrapper<T>, position: Int ->
+            run {
+                val adapterList = getRecyclerViewAdapter<T>().list
+                adapterList.forEach { it.selected = false }
+                egObjectWrapper.selected = true
+                getRecyclerViewAdapter<T>().notifyDataSetChanged()
+
+                view.egActionPositive.setOnClickListener {
+                    onItemSelected(egObjectWrapper.item, position)
+                    dialog.dismiss()
+                }
+            }
+        }
+
+        view.egActionPositive.setOnClickListener {
+            if (positionSelectedItem != -1) {
+                onItemSelected(wrapperList[positionSelectedItem].item, positionSelectedItem)
+                dialog.dismiss()
+            }
+        }
+
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        view.egDialogRecycler.layoutManager = layoutManager
+        view.egDialogRecycler.itemAnimator  = DefaultItemAnimator()
+        view.egDialogRecycler.adapter = adapter
+        adapter.notifyDataSetChanged()
+        return this
+    }
+
+    private fun <T> getRecyclerViewAdapter(): EgListAdapter<T>{
+        return view.egDialogRecycler.adapter as EgListAdapter<T>
     }
 
     override fun setCancelable(flag: Boolean): EgDialogBuilder {

@@ -12,4 +12,6 @@
     <color name="colorBackgroundEgDialogActionNegative">@android:color/transparent</color>
 
     <color name="colorEgDialogBackground">#ffffff</color>
+
+    <color name="colorEgDialogSingleChoiceDescripton">#1a1919</color>
 </resources>

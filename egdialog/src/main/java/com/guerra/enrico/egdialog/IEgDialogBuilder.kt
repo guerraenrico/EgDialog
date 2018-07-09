@@ -30,6 +30,8 @@ interface IEgDialogBuilder {
 
     fun setOnNegativeActionClickListener(listener: EgDialogBuilder.OnActionClickListener): EgDialogBuilder
 
+    fun <T> setSingleChoiceList(list: List<T>, getItemDescription: (T) -> String, onItemSelected: (T, Int) -> Unit, positionSelectedItem: Int = -1): EgDialogBuilder
+
     fun setCancelable(flag: Boolean) : EgDialogBuilder
 
     fun build() : EgDialog
