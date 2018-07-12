@@ -33,5 +33,5 @@
     <dimen name="eg_dialog_recycler_height">400dp</dimen>
     <dimen name="eg_dialog_single_choice_desciption_text_size">20sp</dimen>
     <dimen name="eg_dialog_single_choice_item_padding_vertical">24dp</dimen>
-    <dimen name="eg_dialog_single_choice_item_padding_horizontal">24dp</dimen>
+    <dimen name="eg_dialog_single_choice_item_padding_horizontal">45dp</dimen>
 </resources>
