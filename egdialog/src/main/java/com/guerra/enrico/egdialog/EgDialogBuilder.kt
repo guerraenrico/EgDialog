@@ -136,13 +136,14 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         view.egDialogRecycler.layoutManager = layoutManager
-        view.egDialogRecycler.itemAnimator  = DefaultItemAnimator()
+        view.egDialogRecycler.itemAnimator = DefaultItemAnimator()
         view.egDialogRecycler.adapter = adapter
         adapter.notifyDataSetChanged()
         return this
     }
 
     private fun <T> getRecyclerViewAdapter(): EgListAdapter<T>{
+        @Suppress("UNCHECKED_CAST")
         return view.egDialogRecycler.adapter as EgListAdapter<T>
     }
 
