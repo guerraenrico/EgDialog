@@ -14,4 +14,7 @@
     <color name="colorEgDialogBackground">#ffffff</color>
 
     <color name="colorEgDialogSingleChoiceDescripton">#1a1919</color>
+    <color name="colorBackgroundRecyclerView">#fafafa</color>
+
+    <color name="colorEgDialogDividerHorizontal">#cccccc</color>
 </resources>

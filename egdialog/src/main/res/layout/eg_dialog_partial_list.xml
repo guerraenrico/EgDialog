@@ -4,10 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <include layout="@layout/eg_dialog_divider_horizontal" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/egDialogRecycler"
         android:layout_width="match_parent"
         android:layout_height="@dimen/eg_dialog_recycler_height"
-        android:overScrollMode="ifContentScrolls" />
+        android:overScrollMode="ifContentScrolls"
+        android:background="@color/colorBackgroundRecyclerView"
+        />
+
+    <include layout="@layout/eg_dialog_divider_horizontal" />
 
 </LinearLayout>

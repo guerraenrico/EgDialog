@@ -41,7 +41,7 @@
         <item name="android:layout_marginBottom">@dimen/eg_dialog_description_margin_vertical</item>
     </style>
 
-    <style name="EgDialogActionStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+    <style name="EgDialogActionStyle" parent="@style/Widget.AppCompat.Button">
         <item name="android:textSize">@dimen/eg_dialog_action_text_size</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:foreground">?attr/selectableItemBackground</item>

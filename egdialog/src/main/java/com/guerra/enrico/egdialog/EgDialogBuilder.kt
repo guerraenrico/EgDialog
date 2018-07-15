@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
 import com.guerra.enrico.egdialog.list.EgObjectWrapper
 import kotlinx.android.synthetic.main.eg_dialog_main.view.*
@@ -135,9 +137,12 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         }
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        view.egDialogRecycler.layoutManager = layoutManager
-        view.egDialogRecycler.itemAnimator = DefaultItemAnimator()
-        view.egDialogRecycler.adapter = adapter
+        view.egDialogRecycler.apply {
+            this.layoutManager = layoutManager
+            this.addItemDecoration(EgDividerItemDecoration(this.context, layoutManager.orientation))
+            this.itemAnimator = DefaultItemAnimator()
+            this.adapter = adapter
+        }
         adapter.notifyDataSetChanged()
         return this
     }
