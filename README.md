@@ -15,6 +15,6 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.crocoM4:EgDialog:v0.0.3'
+  implementation 'com.github.crocoM4:EgDialog:0.0.4'
 }
 ```
