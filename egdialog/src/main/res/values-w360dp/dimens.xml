@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="eg_dialog_window_padding_vertical">30dp</dimen>
+    <dimen name="eg_dialog_window_padding_horizontal">30dp</dimen>
+
+    <dimen name="eg_dialog_container_corner_radius">10dp</dimen>
+
+    <dimen name="eg_dialog_content_padding_vertical">30dp</dimen>
+    <dimen name="eg_dialog_content_padding_horizontal">30dp</dimen>
+
+    <dimen name="eg_dialog_title_margin_vertical">20dp</dimen>
+    <dimen name="eg_dialog_title_text_size">22sp</dimen>
+
+
+    <dimen name="eg_dialog_description_text_size">16sp</dimen>
+    <dimen name="eg_dialog_description_margin_vertical">20dp</dimen>
+
+    <!-- Actions -->
+    <dimen name="eg_dialog_action_corner_radius">5dp</dimen>
+    <dimen name="eg_dialog_action_text_size">14sp</dimen>
+
+    <dimen name="eg_dialog_action_margin_vertical">20dp</dimen>
+    <dimen name="eg_dialog_action_margin_horizontal">30dp</dimen>
+
+    <dimen name="eg_dialog_actions_margin">16dp</dimen>
+
+    <dimen name="eg_dialog_action_height">36dp</dimen>
+
+    <dimen name="eg_dialog_action_padding_vertical">8dp</dimen>
+    <dimen name="eg_dialog_action_padding_horizontal">16dp</dimen>
+
+    <!-- Recycler -->
+    <dimen name="eg_dialog_recycler_height">260dp</dimen>
+    <dimen name="eg_dialog_single_choice_description_text_size">18sp</dimen>
+    <dimen name="eg_dialog_single_choice_item_padding_vertical">16dp</dimen>
+    <dimen name="eg_dialog_single_choice_item_padding_horizontal">30dp</dimen>
+</resources>

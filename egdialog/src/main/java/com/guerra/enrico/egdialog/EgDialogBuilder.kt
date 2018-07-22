@@ -2,12 +2,13 @@ package com.guerra.enrico.egdialog
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.support.annotation.StringRes
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import androidx.annotation.StringRes
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
 import com.guerra.enrico.egdialog.list.EgObjectWrapper
 import kotlinx.android.synthetic.main.eg_dialog_main.view.*
@@ -41,7 +42,10 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setDescription(description: CharSequence): EgDialogBuilder {
-        view.egDialogDescription.text = description
+        if (description.isNotEmpty()) {
+            view.egDialogDescription.visibility = View.VISIBLE
+            view.egDialogDescription.text = description
+        }
         return this
     }
 
@@ -68,8 +72,12 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setNegativeActionText(text: CharSequence): EgDialogBuilder {
-        view.egActionNegative.visibility = if (text.isNotEmpty()) View.VISIBLE else View.INVISIBLE
-        view.egActionNegative.text = text
+        if (text.isNotEmpty()) {
+            view.egActionNegative.visibility = View.VISIBLE
+            view.egActionNegative.text = text
+        } else {
+            view.egActionNegative.visibility = View.INVISIBLE
+        }
         return this
     }
 
@@ -135,14 +143,18 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
         }
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        view.egDialogRecycler.layoutManager = layoutManager
-        view.egDialogRecycler.itemAnimator  = DefaultItemAnimator()
-        view.egDialogRecycler.adapter = adapter
+        view.egDialogRecycler.apply {
+            this.layoutManager = layoutManager
+            this.addItemDecoration(EgDividerItemDecoration(this.context, layoutManager.orientation))
+            this.itemAnimator = DefaultItemAnimator()
+            this.adapter = adapter
+        }
         adapter.notifyDataSetChanged()
         return this
     }
 
     private fun <T> getRecyclerViewAdapter(): EgListAdapter<T>{
+        @Suppress("UNCHECKED_CAST")
         return view.egDialogRecycler.adapter as EgListAdapter<T>
     }
 

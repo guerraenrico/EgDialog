@@ -2,7 +2,7 @@ package com.guerra.enrico.egdialoglib
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.guerra.enrico.egdialog.EgDialog
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         buttonOpen.setOnClickListener {
             val builder = EgDialogBuilder(context = this)
                     .setTitle(R.string.app_name)
-                    .setDescription("Lorem ipsum dolor sit ammet")
+//                    .setDescription("Lorem ipsum dolor sit ammet")
                     .setNegativeActionText("Cancel")
                     .setPositiveActionText("Confirm")
                     .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {

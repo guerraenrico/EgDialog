@@ -15,7 +15,7 @@
     <dimen name="eg_dialog_description_text_size">14sp</dimen>
     <dimen name="eg_dialog_description_margin_vertical">16dp</dimen>
 
-    <!-- Actions -->
+     <!-- Actions -->
     <dimen name="eg_dialog_action_corner_radius">5dp</dimen>
     <dimen name="eg_dialog_action_text_size">12sp</dimen>
 

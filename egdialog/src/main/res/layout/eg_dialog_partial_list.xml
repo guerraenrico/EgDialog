@@ -2,13 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/eg_dialog_custom_view_height">
+    android:layout_height="wrap_content">
 
-    <android.support.v7.widget.RecyclerView
+    <include layout="@layout/eg_dialog_divider_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/egDialogRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/eg_dialog_recycler_height"
         android:overScrollMode="ifContentScrolls"
+        android:background="@color/colorBackgroundRecyclerView"
         />
+
+    <include layout="@layout/eg_dialog_divider_horizontal" />
 
 </LinearLayout>
