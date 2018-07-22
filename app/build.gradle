@@ -37,8 +37,8 @@ dependencies {
 
     implementation project(path: ':egdialog')
     
-//    implementation project(path: ':egdialog')
-    implementation 'com.github.crocoM4:EgDialog:0.0.5'
+    implementation project(path: ':egdialog')
+//    implementation 'com.github.crocoM4:EgDialog:0.0.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
