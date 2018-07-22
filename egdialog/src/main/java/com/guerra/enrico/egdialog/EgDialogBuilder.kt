@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
@@ -43,7 +42,10 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setDescription(description: CharSequence): EgDialogBuilder {
-        view.egDialogDescription.text = description
+        if (description.isNotEmpty()) {
+            view.egDialogDescription.visibility = View.VISIBLE
+            view.egDialogDescription.text = description
+        }
         return this
     }
 
@@ -70,8 +72,12 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setNegativeActionText(text: CharSequence): EgDialogBuilder {
-        view.egActionNegative.visibility = if (text.isNotEmpty()) View.VISIBLE else View.INVISIBLE
-        view.egActionNegative.text = text
+        if (text.isNotEmpty()) {
+            view.egActionNegative.visibility = View.VISIBLE
+            view.egActionNegative.text = text
+        } else {
+            view.egActionNegative.visibility = View.INVISIBLE
+        }
         return this
     }
 

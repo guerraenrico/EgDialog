@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="eg_dialog_window_padding_vertical">0dp</dimen>
-    <dimen name="eg_dialog_window_padding_horizontal">30dp</dimen>
+    <dimen name="eg_dialog_window_padding_horizontal">24dp</dimen>
 
     <dimen name="eg_dialog_container_corner_radius">10dp</dimen>
 
