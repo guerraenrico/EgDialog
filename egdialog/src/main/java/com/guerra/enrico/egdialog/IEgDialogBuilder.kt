@@ -1,8 +1,8 @@
 package com.guerra.enrico.egdialog
 
 import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+import android.support.annotation.DrawableRes
+import android.support.annotation.StringRes
 
 /**
  * Created by enrico
