@@ -2,12 +2,12 @@ package com.guerra.enrico.egdialog
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.annotation.StringRes
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import androidx.annotation.StringRes
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
 import com.guerra.enrico.egdialog.list.EgObjectWrapper

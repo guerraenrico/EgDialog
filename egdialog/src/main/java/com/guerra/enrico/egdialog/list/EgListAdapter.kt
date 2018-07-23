@@ -1,8 +1,8 @@
 package com.guerra.enrico.egdialog.list
 
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.guerra.enrico.egdialog.R
 import com.guerra.enrico.egdialog.utils.inflate
 import kotlinx.android.synthetic.main.eg_dialog_item_single_choice.view.*
