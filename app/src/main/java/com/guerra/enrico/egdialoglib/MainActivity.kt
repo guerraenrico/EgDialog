@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                     .setSingleChoiceList(Person.getList(), {
                         person: Person -> person.name
                     }, {
-                        person: Person, position: Int -> Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show()
+                        person: Person, _ -> Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show()
                     }, 1)
             builder.build().show()
         }
