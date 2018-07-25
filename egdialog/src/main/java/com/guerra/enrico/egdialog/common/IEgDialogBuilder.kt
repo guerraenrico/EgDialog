@@ -1,4 +1,4 @@
-package com.guerra.enrico.egdialog
+package com.guerra.enrico.egdialog.common
 
 import android.graphics.drawable.Drawable
 import android.support.annotation.DrawableRes

@@ -1,4 +1,4 @@
-package com.guerra.enrico.egdialog
+package com.guerra.enrico.egdialog.common
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import com.guerra.enrico.egdialog.R
 import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
 import com.guerra.enrico.egdialog.list.EgObjectWrapper
