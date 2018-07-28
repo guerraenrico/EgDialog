@@ -38,7 +38,7 @@
     <!-- Progress -->
     <dimen name="eg_dialog_content_progress_height">100dp</dimen>
     <dimen name="eg_dialog_content_progress_padding_horizontal">30dp</dimen>
-    <dimen name="eg_dialog_progress_height">50dp</dimen>
-    <dimen name="ed_dialog_progress_width">50dp</dimen>
+    <dimen name="eg_dialog_progress_height">65dp</dimen>
+    <dimen name="ed_dialog_progress_width">65dp</dimen>
     <dimen name="eg_dialog_progress_horizontal_margin">30dp</dimen>
 </resources>

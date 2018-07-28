@@ -1,7 +1,6 @@
 package com.guerra.enrico.egdialog.progress
 
 import android.support.annotation.StringRes
-import com.guerra.enrico.egdialog.common.EgDialog
 
 /**
  * Created by enrico

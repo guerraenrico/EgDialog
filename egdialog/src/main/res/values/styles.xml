@@ -79,4 +79,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="EgDialogActionStyleCancel" parent="EgDialogActionStyle">
+        <item name="android:textColor">@color/colorTextEgDialogActionNegative</item>
+        <item name="android:background">@drawable/background_action_negative_eg_dialog</item>
+        <item name="android:layout_marginRight">@dimen/eg_dialog_actions_margin</item>
+    </style>
+
 </resources>
