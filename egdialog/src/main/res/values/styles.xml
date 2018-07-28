@@ -60,11 +60,29 @@
         <item name="android:layout_marginRight">@dimen/eg_dialog_action_margin_horizontal</item>
     </style>
 
+    <!-- Single choice -->
+
     <style name="EgDialogSingleChoiceItemDescriptionStyle">
         <item name="android:textSize">@dimen/eg_dialog_single_choice_description_text_size</item>
         <item name="android:textColor">@color/colorEgDialogSingleChoiceDescripton</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:gravity">start</item>
+    </style>
+
+    <!-- Progress -->
+    <style name="EgDialogProgressLabelStyle">
+        <item name="android:textSize">@dimen/eg_dialog_description_text_size</item>
+        <item name="android:textColor">@color/colorEgDialogDescription</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">start</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EgDialogActionStyleCancel" parent="EgDialogActionStyle">
+        <item name="android:textColor">@color/colorTextEgDialogActionNegative</item>
+        <item name="android:background">@drawable/background_action_negative_eg_dialog</item>
+        <item name="android:layout_marginRight">@dimen/eg_dialog_actions_margin</item>
     </style>
 
 </resources>

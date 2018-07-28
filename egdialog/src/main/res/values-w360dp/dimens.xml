@@ -34,4 +34,11 @@
     <dimen name="eg_dialog_single_choice_description_text_size">18sp</dimen>
     <dimen name="eg_dialog_single_choice_item_padding_vertical">16dp</dimen>
     <dimen name="eg_dialog_single_choice_item_padding_horizontal">30dp</dimen>
+
+    <!-- Progress -->
+    <dimen name="eg_dialog_content_progress_height">100dp</dimen>
+    <dimen name="eg_dialog_content_progress_padding_horizontal">30dp</dimen>
+    <dimen name="eg_dialog_progress_height">65dp</dimen>
+    <dimen name="ed_dialog_progress_width">65dp</dimen>
+    <dimen name="eg_dialog_progress_horizontal_margin">30dp</dimen>
 </resources>

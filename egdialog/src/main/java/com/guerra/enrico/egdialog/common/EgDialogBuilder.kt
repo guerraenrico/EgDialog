@@ -1,13 +1,15 @@
-package com.guerra.enrico.egdialog
+package com.guerra.enrico.egdialog.common
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import com.guerra.enrico.egdialog.R
 import com.guerra.enrico.egdialog.list.EgDividerItemDecoration
 import com.guerra.enrico.egdialog.list.EgListAdapter
 import com.guerra.enrico.egdialog.list.EgObjectWrapper
@@ -59,7 +61,7 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setPositiveActionBackgroundDrawable(drawable: Int): EgDialogBuilder {
-        return setPositiveActionBackgroundDrawable(context.resources.getDrawable(drawable, context.theme))
+        return setPositiveActionBackgroundDrawable(getResourcesDrawable(drawable))
     }
 
     override fun setPositiveActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder {
@@ -82,7 +84,7 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     override fun setNegativeActionBackgroundDrawable(drawable: Int): EgDialogBuilder {
-        return setNegativeActionBackgroundDrawable(context.resources.getDrawable(drawable, context.theme))
+        return setNegativeActionBackgroundDrawable(getResourcesDrawable(drawable))
     }
 
     override fun setNegativeActionBackgroundDrawable(drawable: Drawable): EgDialogBuilder {
@@ -170,6 +172,8 @@ class EgDialogBuilder(var context: Context) : IEgDialogBuilder {
     }
 
     private fun getResourcesString(@StringRes stringId: Int) : String = context.getString(stringId)
+
+    private fun getResourcesDrawable(@DrawableRes drawableId: Int): Drawable = context.resources.getDrawable(drawableId, context.theme)
 
     interface OnActionClickListener{
         fun onClick(view: View, context: Context, dialog: EgDialog)

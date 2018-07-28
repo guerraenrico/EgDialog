@@ -1,7 +1,9 @@
-package com.guerra.enrico.egdialog
+package com.guerra.enrico.egdialog.common
 
 import android.os.Bundle
 import android.view.ViewGroup
+import com.guerra.enrico.egdialog.BaseDialog
+import com.guerra.enrico.egdialog.R
 
 /**
  * Created by enrico
