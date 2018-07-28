@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonOpen.setOnClickListener {
             val builder = EgDialogProgressBuilder(context = this)
-                    .setProgressLabel("Loading")
+                    .setProgressLabel("Loading...")
 
             builder.build().show()
         }
