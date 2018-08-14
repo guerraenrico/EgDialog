@@ -17,47 +17,47 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        buttonOpen.setOnClickListener {
-//            val builder = EgDialogBuilder(context = this)
-//                    .setTitle(R.string.app_name)
-//                    .setDescription("Lorem ipsum dolor sit ammet")
-//                    .setNegativeActionText("Cancel")
-//                    .setPositiveActionText("Confirm")
-//                    .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {
-//                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
-//                            dialog.dismiss()
-//                        }
-//                    })
-//                    .setOnPositiveActionClickListener(object : EgDialogBuilder.OnActionClickListener {
-//                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
-//                            Toast.makeText(context, "Confirm", Toast.LENGTH_SHORT).show()
-//                        }
-//
-//                    })
-//            builder.build().show()
-//        }
+        buttonSimple.setOnClickListener {
+            val builder = EgDialogBuilder(context = this)
+                    .setTitle(R.string.app_name)
+                    .setDescription("Lorem ipsum dolor sit ammet")
+                    .setNegativeActionText("Cancel")
+                    .setPositiveActionText("Confirm")
+                    .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {
+                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
+                            dialog.dismiss()
+                        }
+                    })
+                    .setOnPositiveActionClickListener(object : EgDialogBuilder.OnActionClickListener {
+                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
+                            Toast.makeText(context, "Confirm", Toast.LENGTH_SHORT).show()
+                        }
 
-//        buttonOpen.setOnClickListener {
-//            val builder = EgDialogBuilder(context = this)
-//                    .setTitle(R.string.app_name)
-//                    .setDescription("Lorem ipsum dolor sit ammet")
-//                    .setNegativeActionText("Cancel")
-//                    .setPositiveActionText("Confirm")
-//                    .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {
-//                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
-//                            dialog.dismiss()
-//                        }
-//                    })
-//                    .setSingleChoiceList(Person.getList(), { person: Person ->
-//                        person.name
-//                    }, { person: Person, _ ->
-//                        Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show()
-//                    }, 1)
-//
-//            builder.build().show()
-//        }
+                    })
+            builder.build().show()
+        }
 
-        buttonOpen.setOnClickListener {
+        buttonList.setOnClickListener {
+            val builder = EgDialogBuilder(context = this)
+                    .setTitle(R.string.app_name)
+                    .setDescription("Lorem ipsum dolor sit ammet")
+                    .setNegativeActionText("Cancel")
+                    .setPositiveActionText("Confirm")
+                    .setOnNegativeActionClickListener(object : EgDialogBuilder.OnActionClickListener {
+                        override fun onClick(view: View, context: Context, dialog: EgDialog) {
+                            dialog.dismiss()
+                        }
+                    })
+                    .setSingleChoiceList(Person.getList(), { person: Person ->
+                        person.name
+                    }, { person: Person, _ ->
+                        Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show()
+                    }, 1)
+
+            builder.build().show()
+        }
+
+        buttonLoading.setOnClickListener {
             val builder = EgDialogProgressBuilder(context = this)
                     .setProgressLabel("Loading...")
 
