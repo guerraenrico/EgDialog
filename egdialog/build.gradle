@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 ext {
     PUBLISH_GROUP_ID = 'com.guerra.enrico'
     PUBLISH_ARTIFACT_ID = 'egdialog'
-    PUBLISH_VERSION = '0.0.7.2'
+    PUBLISH_VERSION = '0.0.7.3'
 }
 
 android {
@@ -14,8 +14,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 9
-        versionName "0.0.7.2"
+        versionCode 10
+        versionName "0.0.7.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -33,9 +33,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:28.0.0-rc01"
+    implementation "com.android.support:appcompat-v7:28.0.0"
 
-    implementation "com.android.support:design:28.0.0-rc01"
+    implementation "com.android.support:design:28.0.0"
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
