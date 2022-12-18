@@ -1,4 +1,4 @@
-# EgDialog
+# EgDialog (Deprecated)
 
 [![](https://jitpack.io/v/crocoM4/EgDialog.svg)](https://jitpack.io/#crocoM4/EgDialog)
 
